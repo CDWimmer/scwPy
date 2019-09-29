@@ -2,7 +2,9 @@
 
 from scaleway.apis import ComputeAPI
 
-ORG_ID = "75536117-245b-4a47-a82f-4e5c74ae4793"
+with open("organization.id", "r") as org_file:
+    ORG_ID = org_file.read()
+
 with open("secret.key", "r") as key_file:
     api = ComputeAPI(region='par1', auth_token=key_file.read())
 
@@ -56,6 +58,8 @@ def power_on(server_id: str):
     result = api.query().servers(server_id).action.post({"action": "poweron"})
     return result
 
+
+# testing out using some of the above. 
 
 all_ips = api.query().ips.get()
 
