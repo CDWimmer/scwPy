@@ -42,7 +42,7 @@ def del_ip(ip_id: str):
 def create_ip():
     """Create a new reserved IP and return a dict of its information."""
     result = api.query().ips.post({"organization": ORG_ID})
-    return result["ip"]
+    return result["ip"] # yes for some reason the api returns a dict with just "ip" which then contains everything.
 
 
 def power_off(server_id: str):
