@@ -4,7 +4,7 @@ from scaleway.apis import ComputeAPI
 
 ORG_ID = "75536117-245b-4a47-a82f-4e5c74ae4793"
 
-api = ComputeAPI(region='par1', auth_token='16624bda-22f2-485e-8465-97192967993e')
+api = ComputeAPI(region='par1', auth_token='TOKEN')
 
 all_srv = api.query().servers.get()["servers"]
 
