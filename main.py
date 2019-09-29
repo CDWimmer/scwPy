@@ -59,7 +59,7 @@ def power_on(server_id: str):
 
 all_ips = api.query().ips.get()
 
-new_ip = api.query().ips.post({"organization": ORG_ID})
+new_ip = create_ip()
 
 print(new_ip)
 
