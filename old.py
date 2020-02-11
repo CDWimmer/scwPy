@@ -2,10 +2,10 @@
 
 from scaleway.apis import ComputeAPI
 
-with open("organization.id", "r") as org_file:
+with open("real_org.id", "r") as org_file:
     ORG_ID = org_file.read()
 
-with open("secret.key", "r") as key_file:
+with open("real.key", "r") as key_file:
     api = ComputeAPI(region='par1', auth_token=key_file.read())
 
 all_srv = api.query().servers.get()["servers"]
@@ -60,11 +60,17 @@ def power_on(server_id: str):
 
 
 # testing out using some of the above. 
+#
+# all_ips = api.query().ips.get()
+#
+# new_ip = create_ip()
+#
+# print(new_ip)
+#
+# del_ip(new_ip["id"])
 
-all_ips = api.query().ips.get()
+print(all_srv[1])
+import json
+with open('temp.txt', 'w') as f:
+    json.dump(all_srv[0], f)
 
-new_ip = create_ip()
-
-print(new_ip)
-
-del_ip(new_ip["id"])
