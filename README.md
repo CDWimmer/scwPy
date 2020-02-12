@@ -6,7 +6,7 @@ Slowly creating some sort of wrapper around the existing Scaleway.ComputeAPI mod
 Vague example useage in `test.py`
 
 # Requires:
-https://github.com/scaleway,
+https://github.com/scaleway/python-scaleway,
 Install with:
 ```
 pip install scaleway-sdk
