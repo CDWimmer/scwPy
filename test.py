@@ -12,7 +12,7 @@ fr_manager = ScwPy.Manager(key, org, "par1")
 # print some information about all of our servers:
 for server in fr_manager.servers:
     print(f"Server name: {server.name} | Server ID: {server.id}\n"
-          f"Address: {server.address} | IP ID: {server.ip().id}\n"
+          f"Address: {server.address} | IP ID: {server.get_ip().id}\n"
           f"=============================================")
 
 # Create a new IP
@@ -35,7 +35,7 @@ target.power_off()
 
 # remove the IP
 target.detach_ip()
-# Note that the website UI might bug out and show "IP Address" as its private IP until it actually shuts down
+# Note that the website UI will show "IP Address" as its private IP until it actually shuts down
 
 # delete the IP we created at the beginning
 new_ip.delete()
